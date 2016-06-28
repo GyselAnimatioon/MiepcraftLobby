@@ -10,21 +10,26 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import ch.gyselanimatioon.miepcraftlobby.listeners.BuildListener;
+import ch.gyselanimatioon.miepcraftlobby.listeners.ChatListener;
+import ch.gyselanimatioon.miepcraftlobby.listeners.CommandListener;
 import ch.gyselanimatioon.miepcraftlobby.listeners.DropListener;
 import ch.gyselanimatioon.miepcraftlobby.listeners.InventoryClickListener;
 import ch.gyselanimatioon.miepcraftlobby.listeners.JoinListener;
 import ch.gyselanimatioon.miepcraftlobby.listeners.NavigationMenu;
+import ch.gyselanimatioon.miepcraftlobby.listeners.QuitListener;
 
 public class Main extends JavaPlugin implements Listener {
 
 	@Override
 	public void onEnable() {
 		Bukkit.getServer().getPluginManager().registerEvents(new JoinListener(), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new QuitListener(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new NavigationMenu(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new BuildListener(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new DropListener(), this);
-		Bukkit.getServer().getPluginManager().registerEvents(new DoubleJump(), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new CommandListener(), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(), this);
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -41,7 +46,7 @@ public class Main extends JavaPlugin implements Listener {
 		ItemMeta netherStarMeta = netherStar.getItemMeta();
 
 		compassMeta.setDisplayName("§r§aNavigator §7(Rechtsklick)");
-		blazeRodMeta.setDisplayName("§r§aSpieler ausblenden §7(Comming Soon)");
+		blazeRodMeta.setDisplayName("§r§aSpieler ausblenden §7(Rechtsklick)");
 		netherStarMeta.setDisplayName("§r§bLobby wechseln §7(Comming Soon)");
 
 		compass.setItemMeta(compassMeta);
@@ -50,7 +55,7 @@ public class Main extends JavaPlugin implements Listener {
 		
 		ItemStack skull = new ItemStack(397, 1, (short) 3);
 		SkullMeta meta = (SkullMeta) skull.getItemMeta();
-		meta.setDisplayName("§r§eFreunde §7(Comming Soon)");
+		meta.setDisplayName("§r§eFreunde §7(Rechtsklick)");
 		meta.setOwner(p.getName());
 		skull.setItemMeta(meta);
 

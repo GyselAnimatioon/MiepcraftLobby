@@ -2,3 +2,29 @@ main: ch.gyselanimatioon.miepcraftlobby.Main
 name: MiepcraftLobby
 author: GyselAnimatioon
 version: 1.0
+    
+permissions:
+  miepcraftlobby.bypass:
+    description: Umgehen der Sperren.
+    default: op
+  miepcraftlobby.adminwarp:
+    description: Tp an adminwarp.
+    default: op
+  miepcraftlobby.chat.owner:
+    description: Owner Chat Color.
+    default: op
+  miepcraftlobby.chat.admin:
+    description: Admin Chat Color.
+    default: op
+  miepcraftlobby.chat.moderator:
+    description: Moderator Chat Color.
+    default: op
+  miepcraftlobby.chat.builder:
+    description: Builder Chat Color.
+    default: op
+  miepcraftlobby.chat.youtuber:
+    description: Youtuber Chat Color.
+    default: op
+  miepcraftlobby.chat.vip:
+    description: VIP Chat Color.
+    default: op

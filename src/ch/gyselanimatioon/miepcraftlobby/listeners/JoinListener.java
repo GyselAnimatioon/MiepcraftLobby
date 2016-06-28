@@ -10,6 +10,7 @@ public class JoinListener implements Listener {
 	
 	@EventHandler
 	public void PlayerJoinEvent(PlayerJoinEvent ev) {
+		ev.setJoinMessage(null);
 		Main.resetItems(ev.getPlayer());
 	}
 }

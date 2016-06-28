@@ -9,11 +9,15 @@ public class BuildListener implements Listener {
 
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
-		event.setCancelled(true);
+		if (!event.getPlayer().hasPermission("miepcraftlobby.bypass")) {
+			event.setCancelled(true);
+		}
 	}
 
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event) {
-		event.setCancelled(true);
+		if (!event.getPlayer().hasPermission("miepcraftlobby.bypass")) {
+			event.setCancelled(true);
+		}
 	}
 }
