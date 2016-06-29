@@ -17,6 +17,7 @@ import ch.gyselanimatioon.miepcraftlobby.listeners.InventoryClickListener;
 import ch.gyselanimatioon.miepcraftlobby.listeners.JoinListener;
 import ch.gyselanimatioon.miepcraftlobby.listeners.NavigationMenu;
 import ch.gyselanimatioon.miepcraftlobby.listeners.QuitListener;
+import ch.gyselanimatioon.miepcraftlobby.listeners.WeatherChangeListener;
 
 public class Main extends JavaPlugin implements Listener {
 
@@ -30,6 +31,7 @@ public class Main extends JavaPlugin implements Listener {
 		Bukkit.getServer().getPluginManager().registerEvents(new DropListener(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new CommandListener(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new WeatherChangeListener(), this);
 	}
 	
 	@SuppressWarnings("deprecation")
